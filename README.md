@@ -1,0 +1,5 @@
+# ThinkPHP3.1-PHP7.1.15
+PHP7发布两年多以来,各种扩展和插件已经基本兼容PHP7，由于公司使用的是ThinkPHP3.1很多语法不兼容PHP7，花了一周左右的时间去修改框架底层不兼容的代码,来使项目切换到PHP7
+注意事项：
+1.ThinkPHP3.1默认使用的是mysql扩展连接数据库的,接入项目时得切换为PDO方式连接,切换方式TP官方文档上有。
+2.ThinkPHP3.1只支持mongo方式连接mongodb数据库,但是PHP7以后废除了mongo扩展,但是项目中使用mongo的地方太多,改动代码逻辑太复杂,所以使用composer加载了一个中间件把mongo扩展的方法全部映射到mongodb扩展方法中，扩展为alcaeus/mongo-php-adapter。
